@@ -5,4 +5,6 @@
   tasks:
   - include_role:
       name: common
+  - include_role:
+      name: nodejs_8.x
 ...
