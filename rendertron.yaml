@@ -2,7 +2,7 @@
 - name: Initialize Rendertron
   hosts: rendertronservers
   become: yes
-  roles:
-    - common
-    - nodejs_8.x
+  tasks:
+  - include_role:
+      name: common
 ...
