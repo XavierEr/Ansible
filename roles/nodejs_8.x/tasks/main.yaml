@@ -5,9 +5,10 @@
     dest: /tmp/setup_8.x
 
 - name: Run nodejs v8.x script
-  shell: bash /tmp/setup_8.x
+  shell: bash setup_8.x >> setup_8.x.log.txt
   args:
-    creates: /tmp/setup_8.x.done
+    chdir: tmp/
+    creates: setup_8.x.log.txt
 
 # - name: Install nodejs
 #   apt:
