@@ -10,4 +10,11 @@
   npm:
     path: github/rendertron/
     state: present
+
+- name: Build rendertron docker image
+  docker_image:
+    path: github/rendertron/
+    name: Rendertron
+    tag: rendertron
+    nocache: yes
 ...
