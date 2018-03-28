@@ -10,9 +10,9 @@
     chdir: /tmp/
     creates: setup_8.x.log.txt
 
-# - name: Install nodejs
-#   apt:
-#     name: nodejs
-#     state: present
-#     update_cache: yes
+- name: Install nodejs
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes
 ...
