@@ -12,4 +12,7 @@
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
+
+- debug:
+  msg: {{ ansible_lsb }}
 ...
