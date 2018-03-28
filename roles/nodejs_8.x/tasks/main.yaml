@@ -7,7 +7,7 @@
 - name: Run nodejs v8.x script
   shell: /tmp/setup_8.x
   args:
-    executable: sudo /bin/bash
+    executable: /bin/bash
 
 - name: Install nodejs
   apt:
