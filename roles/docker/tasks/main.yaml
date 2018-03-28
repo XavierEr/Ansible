@@ -1,7 +1,7 @@
 ---
 - name: Remove older versions of docker
   apt:
-    name: {{ item }}
+    name: "{{ item }}"
     state: absent
   loop:
     - docker
