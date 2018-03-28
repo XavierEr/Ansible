@@ -2,7 +2,7 @@
 - name: Download nodejs v8.x script
   get_url:
     url: https://deb.nodesource.com/setup_8.x
-    tmp_dest: /setup_8.x
+    dest: /tmp/setup_8.x
 
 # - name: Run nodejs v8.x script
 #   shell: /tmp/setup_8.x
