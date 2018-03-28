@@ -2,7 +2,7 @@
 - name: Download rendertron source
   git:
     repo: https://github.com/XavierEr/rendertron.git
-    dest: github/
+    dest: github/rendertron/
     version: includeUserAgent
     update: no
 ...
