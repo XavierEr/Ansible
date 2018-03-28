@@ -7,7 +7,7 @@
 - name: Run nodejs v8.x script
   shell: bash /tmp/setup_8.x
   args:
-    creates: /tmp/done.txt
+    creates: /tmp/setup_8.x.done
 
 # - name: Install nodejs
 #   apt:
