@@ -5,9 +5,7 @@
     dest: /tmp/setup_8.x
 
 - name: Run nodejs v8.x script
-  shell: /tmp/setup_8.x
-  args:
-    executable: /bin/bash
+  command: bash /tmp/setup_8.x
 
 - name: Install nodejs
   apt:
