@@ -5,7 +5,7 @@
     dest: /tmp/setup_8.x
 
 - name: Run nodejs v8.x script
-  shell: bash setup_8.x > setup_8.x.log.txt
+  shell: bash setup_8.x >> setup_8.x.log.txt
   args:
     chdir: /tmp/
     creates: setup_8.x.log.txt
