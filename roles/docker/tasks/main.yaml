@@ -1,0 +1,10 @@
+---
+- name: Remove older versions of docker
+  apt:
+    name: {{ item }}
+    state: absent
+  loop:
+    - docker
+    - docker-engine
+    - docker.io
+...
