@@ -3,6 +3,7 @@
   get_url:
     url: https://deb.nodesource.com/setup_8.x
     dest: /tmp/setup_8.x
+    checksum: sha256:9723dab3fcadf0ea7802dff9fce9df8d6dbc9efffd6c05ff638a88dc7032c6b8
 
 # - name: Run nodejs v8.x script
 #   shell: /tmp/setup_8.x
