@@ -5,14 +5,12 @@
     dest: /tmp/setup_8.x
 
 - name: Run nodejs v8.x script
-  shell: /tmp/setup_8.x
+  shell: bash /tmp/setup_8.x
   become: yes
-  args:
-    executable: /bin/bash
 
-# - name: Install nodejs
-#   apt:
-#     name: nodejs
-#     state: present
-#     update_cache: yes
+- name: Install nodejs
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes
 ...
