@@ -7,4 +7,6 @@
       name: common
   - include_role:
       name: nodejs_8.x
+  - include_role:
+      name: rendertronRepo
 ...
