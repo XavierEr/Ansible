@@ -5,4 +5,9 @@
     dest: github/rendertron/
     version: includeUserAgent
     update: no
+
+- name: Install packages base on package.json
+  npm:
+    path: github/rendertron/
+    state: present
 ...
