@@ -11,4 +11,7 @@
   args:
     chdir: github/rendertron/
     creates: build.log.txt
+
+- name: Run rendertron container
+  shell: docker run -dit -p 8080:8080 --shm-size=256m --restart unless-stopped --name rendertron-container rendertron
 ...
