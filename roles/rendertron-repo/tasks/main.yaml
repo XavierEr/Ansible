@@ -7,7 +7,7 @@
     update: no
 
 - name: Build rendertron docker image
-  shell: docker build -t rendertron . --no-cache=true
+  shell: docker build -t rendertron . --no-cache=true >> build.log.txt
   args:
     chdir: github/rendertron/
     creates: build.log.txt
