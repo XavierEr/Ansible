@@ -13,8 +13,15 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-- name: Add stable docker repository into sources list
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable
-    state: present
+- name: Get Something
+  shell: lsb_release -cs
+  register: lsb_release_code
+
+- debug:
+  msg: "{{ lsb_release_code }}"
+
+# - name: Add stable docker repository into sources list
+#   apt_repository:
+#     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release_code }} stable
+#     state: present
 ...
