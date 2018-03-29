@@ -9,6 +9,6 @@
       name: nodejs_8.x
   - include_role:
       name: docker
-  # - include_role:
-  #     name: rendertronRepo
+  - include_role:
+      name: rendertronRepo
 ...
