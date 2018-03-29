@@ -18,6 +18,7 @@
   register: lsb_release_code
 
 - debug:
+  var: lsb_release_code
   msg: "{{ lsb_release_code }}"
 
 # - name: Add stable docker repository into sources list
