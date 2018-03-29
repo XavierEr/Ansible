@@ -6,22 +6,22 @@
     version: includeUserAgent
     update: no
 
-- name: Install packages base on package.json
-  npm:
-    path: github/rendertron/
-    state: present
+# - name: Install packages base on package.json
+#   npm:
+#     path: github/rendertron/
+#     state: present
 
-- name: Install docker-py
-  pip:
-    name: docker-py
-    state: present
+# - name: Install docker-py
+#   pip:
+#     name: docker-py
+#     state: present
 
-- name: Build rendertron docker image
-  docker_image:
-    path: github/rendertron/
-    name: Rendertron
-    tag: rendertron
-    nocache: yes
-    state: present
-    pull: no
+# - name: Build rendertron docker image
+#   docker_image:
+#     path: github/rendertron/
+#     name: Rendertron
+#     tag: rendertron
+#     nocache: yes
+#     state: present
+#     pull: no
 ...

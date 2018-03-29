@@ -9,8 +9,8 @@
 #       name: nodejs_8.x
   - include_role:
       name: docker
-  - include_role:
-      name: pipPrerequisite
+#   - include_role:
+#       name: pipPrerequisite
   - include_role:
       name: rendertronRepo
 ...
