@@ -13,6 +13,8 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-- debug:
-  msg: "{{ ansible_distribution }}"
+- name: Add stable docker repository into sources list
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable
+    state: present
 ...
