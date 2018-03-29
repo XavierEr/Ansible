@@ -1,0 +1,13 @@
+---
+- name: Install python pip
+  apt:
+    name: python-pip
+    state: present
+    update_cache: yes
+
+- name: Install virtualenv
+  apt:
+    name: virtualenv
+    state: present
+    update_cache: yes
+...
