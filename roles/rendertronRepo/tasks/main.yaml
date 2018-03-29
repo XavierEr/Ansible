@@ -13,7 +13,7 @@
 
 - name: Install docker-py
   pip:
-    name: Install docker-py
+    name: docker-py
     state: present
 
 - name: Build rendertron docker image
