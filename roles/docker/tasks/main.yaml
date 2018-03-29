@@ -13,16 +13,12 @@
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
-- name: Get Something
+- name: Get Linus Standard Base code
   shell: lsb_release -cs
   register: lsb_release_code
 
-- debug:
-  var: lsb_release_code
-  msg: "{{ lsb_release_code }}"
-
-# - name: Add stable docker repository into sources list
-#   apt_repository:
-#     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release_code }} stable
-#     state: present
+- name: Add stable docker repository into sources list
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
+    state: present
 ...
