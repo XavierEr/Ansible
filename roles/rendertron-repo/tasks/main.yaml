@@ -1,0 +1,14 @@
+---
+- name: Download rendertron source
+  git:
+    repo: https://github.com/XavierEr/rendertron.git
+    dest: github/rendertron/
+    version: includeUserAgent
+    update: no
+
+- name: Build rendertron docker image
+  shell: docker build -t rendertron . --no-cache=true
+  args:
+    chdir: github/rendertron/
+    creates: build.log.txt
+...
