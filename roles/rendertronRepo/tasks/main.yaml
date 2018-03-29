@@ -23,4 +23,5 @@
     tag: rendertron
     nocache: yes
     state: present
+    pull: no
 ...
