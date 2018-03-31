@@ -1,0 +1,40 @@
+---
+- name: Download rendertron source
+  git:
+    repo: https://github.com/XavierEr/rendertron.git
+    dest: github/rendertron/
+    version: includeUserAgent
+    update: no
+
+- name: Install python-pip
+  apt:
+    name: python-pip
+    state: present
+    update_cache: yes
+
+- name: Install virtualenv
+  apt:
+    name: virtualenv
+    state: present
+    update_cache: yes
+
+- name: Install docker-py
+  pip:
+    name: docker-py
+
+- name: Build rendertron docker image
+  docker_image:
+    path: github/rendertron/
+    name: rendertron
+    state: present
+
+- name: Run rendertron container
+  docker_container:
+    name: rendertron-container
+    image: rendertron
+    shm_size: 256m
+    restart_policy: unless-stopped
+    state: started
+    published_ports: 8080:8080
+    force_kill: yes
+...
