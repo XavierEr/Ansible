@@ -1,0 +1,15 @@
+---
+- name: Download rendertron source
+  git:
+    repo: https://github.com/XavierEr/test.git
+    dest: github/test/
+    update: no
+
+- name: Install packages based on package.json.
+  npm:
+    path: /github/test
+    state: present
+
+- name: Run test server
+  shell: node server.js
+...
