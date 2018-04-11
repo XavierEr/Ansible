@@ -1,5 +1,5 @@
 ---
-- name: Download rendertron source
+- name: Download test source
   git:
     repo: https://github.com/XavierEr/test.git
     dest: github/test/
@@ -11,5 +11,8 @@
     state: present
 
 - name: Run test server
-  shell: node server.js
+  shell: node server.js >> log.txt
+  args:
+    chdir: /github/test
+    creates: log.txt
 ...
