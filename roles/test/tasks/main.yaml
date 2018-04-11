@@ -7,12 +7,12 @@
 
 - name: Install packages based on package.json.
   npm:
-    path: /github/test
+    path: github/test/
     state: present
 
 - name: Run test server
   shell: node server.js >> log.txt
   args:
-    chdir: /github/test
+    chdir: /github/test/
     creates: log.txt
 ...
