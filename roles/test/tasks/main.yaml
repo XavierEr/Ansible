@@ -10,9 +10,15 @@
     path: github/test/
     state: present
 
+- name: Install PM2
+  npm:
+    name: pm2
+    global: yes
+    production: yes
+    state: present
+
 - name: Run test server
-  shell: node server.js >> log.txt
+  shell: pm2 start server.js --name server
   args:
     chdir: github/test/
-    creates: log.txt
 ...
