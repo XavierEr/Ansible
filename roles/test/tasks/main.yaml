@@ -13,6 +13,6 @@
 - name: Run test server
   shell: node server.js >> log.txt
   args:
-    chdir: /github/test/
+    chdir: github/test/
     creates: log.txt
 ...
