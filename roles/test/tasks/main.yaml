@@ -17,16 +17,6 @@
     production: yes
     state: present
 
-- name: Stop test server
-  shell: pm2 stop server
-  args:
-    chdir: github/test/
-
-- name: Remove test server
-  shell: pm2 remove server
-  args:
-    chdir: github/test/
-
 - name: Run test server
   shell: pm2 start server.js --name server
   args:
