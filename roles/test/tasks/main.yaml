@@ -10,15 +10,21 @@
     path: github/test/
     state: present
 
-- name: Install PM2
+- name: Install pm2
   npm:
     name: pm2
     global: yes
     production: yes
     state: present
 
+- name: Delete test from pm2
+  shell: pm2 delete test
+  args:
+    chdir: github/test/
+  ignore_errors: yes
+
 - name: Run test server
-  shell: pm2 start server.js --name server
+  shell: pm2 start server.js --name test
   args:
     chdir: github/test/
 ...
