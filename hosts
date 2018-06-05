@@ -47,3 +47,6 @@ localadmin@40.65.189.70
 
 [testservers]
 localadmin@52.230.8.139
+
+[gonggaservers]
+localadmin@104.215.190.198
