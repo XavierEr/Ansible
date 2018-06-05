@@ -1,0 +1,18 @@
+---
+- name: Download nodejs v8.x script
+  get_url:
+    url: https://deb.nodesource.com/setup_{{ version }}.x
+    dest: /tmp/setup_{{ version }}.x
+
+- name: Run nodejs v{{ version }}.x script
+  shell: bash setup_{{ version }}.x >> setup_{{ version }}.x.log.txt
+  args:
+    chdir: /tmp/
+    creates: setup_{{ version }}.x.log.txt
+
+- name: Install nodejs
+  apt:
+    name: nodejs
+    state: present
+    update_cache: yes
+...
