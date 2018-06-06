@@ -7,8 +7,8 @@
       name: common
   - include_role:
       name: nodejs
-      vars:
-        version: 8
+    vars:
+      version: 8
   - include_role:
       name: test
 ...
