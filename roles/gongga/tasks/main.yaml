@@ -1,7 +1,7 @@
 ---
 - name: Download gongga source
   git:
-    repo: https://github.com/wego/gongga.git
+    repo: git@github.com:wego/gongga.git
     dest: /opt/apps/gongga/
     update: yes
 
