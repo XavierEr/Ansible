@@ -1,0 +1,12 @@
+---
+- name: Initialize Gongga
+  hosts: gonggaservers
+  become: yes
+  tasks:
+  - include_role:
+      name: common
+  - include_role:
+      name: nodejs
+        vars:
+          version: 8
+...
