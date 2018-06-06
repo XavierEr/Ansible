@@ -7,5 +7,5 @@ Type=simple
 Restart=always
 Environment=NODE_ENV=production
 Environment=PORT=80
-WorkingDirectory=/opt/apps/gongga/
+WorkingDirectory=/home/localadmin/github/gongga
 ExecStart=npm start

@@ -2,23 +2,23 @@
 - name: Download gongga source
   git:
     repo: git@github.com:wego/gongga.git
-    dest: /opt/apps/gongga/
+    dest: github/gongga/
     update: yes
 
 - name: Install packages based on package.json.
   npm:
-    path: /opt/apps/gongga/
+    path: github/gongga/
     state: present
 
 - name: Install packages based on bower.json.
   bower:
-    path: /opt/apps/gongga/
+    path: github/gongga/
     state: present
 
 - name: Build polymer components
   shell: polymer build
   args:
-    chdir: /opt/apps/gongga/
+    chdir: github/gongga/
 
 - name: Add gonggo service systemd configuration
   copy:
