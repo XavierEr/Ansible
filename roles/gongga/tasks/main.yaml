@@ -1,7 +1,7 @@
 ---
 - name: Download gongga source
   git:
-    repo: https://15e7855ca9f21b19cc95bb1c93f140c2daeae341:x-oauth-basic@github.com/wego/gongga.git
+    repo: 'https://15e7855ca9f21b19cc95bb1c93f140c2daeae341:x-oauth-basic@github.com/wego/gongga.git'
     dest: github/gongga/
     update: yes
 
