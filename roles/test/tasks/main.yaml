@@ -32,14 +32,10 @@
     dest: /etc/pm2/conf.d/process.json
     mode: 0644
 
-# - name: Delete test from pm2
-#   shell: pm2 delete test
-#   args:
-#     chdir: github/test/
-#   ignore_errors: yes
+- name: Delete test from pm2
+  shell: pm2 delete /etc/pm2/conf.d/process.json
+  # ignore_errors: yes
 
-# - name: Run test server
-#   shell: pm2 start server.js --name test
-#   args:
-#     chdir: github/test/
+- name: Run test server
+  shell: pm2 start /etc/pm2/conf.d/process.json --env production
 ...
