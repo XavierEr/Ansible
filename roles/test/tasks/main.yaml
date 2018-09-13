@@ -2,12 +2,12 @@
 - name: Download test source
   git:
     repo: https://github.com/XavierEr/test.git
-    dest: github/test/
+    dest: opt/apps/test
     update: yes
 
 - name: Install packages based on package.json.
   npm:
-    path: github/test/
+    path: opt/apps/test
     state: present
 
 - name: Install pm2
@@ -17,14 +17,29 @@
     production: yes
     state: present
 
-- name: Delete test from pm2
-  shell: pm2 delete test
-  args:
-    chdir: github/test/
-  ignore_errors: yes
+# - name: Create pm2 configuration directory
+#   file:
+#     path: "/etc/{{ item }}"
+#     state: directory
+#     mode: 0644
+#   loop:
+#     - pm2
+#     - pm2/conf.d
 
-- name: Run test server
-  shell: pm2 start server.js --name test
-  args:
-    chdir: github/test/
+# - name: Add rendertron pm2 process configuration
+#   copy:
+#     src: process.json
+#     dest: /etc/pm2/conf.d/process.json
+#     mode: 0644
+
+# - name: Delete test from pm2
+#   shell: pm2 delete test
+#   args:
+#     chdir: github/test/
+#   ignore_errors: yes
+
+# - name: Run test server
+#   shell: pm2 start server.js --name test
+#   args:
+#     chdir: github/test/
 ...
