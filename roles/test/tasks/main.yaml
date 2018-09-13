@@ -17,20 +17,20 @@
     production: yes
     state: present
 
-# - name: Create pm2 configuration directory
-#   file:
-#     path: "/etc/{{ item }}"
-#     state: directory
-#     mode: 0644
-#   loop:
-#     - pm2
-#     - pm2/conf.d
+- name: Create pm2 configuration directory
+  file:
+    path: "/etc/{{ item }}"
+    state: directory
+    mode: 0644
+  loop:
+    - pm2
+    - pm2/conf.d
 
-# - name: Add rendertron pm2 process configuration
-#   copy:
-#     src: process.json
-#     dest: /etc/pm2/conf.d/process.json
-#     mode: 0644
+- name: Add rendertron pm2 process configuration
+  copy:
+    src: process.json
+    dest: /etc/pm2/conf.d/process.json
+    mode: 0644
 
 # - name: Delete test from pm2
 #   shell: pm2 delete test
