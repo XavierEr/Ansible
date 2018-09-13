@@ -2,12 +2,12 @@
 - name: Download test source
   git:
     repo: https://github.com/XavierEr/test.git
-    dest: opt/apps/test
+    dest: /opt/apps/test
     update: yes
 
 - name: Install packages based on package.json.
   npm:
-    path: opt/apps/test
+    path: /opt/apps/test
     state: present
 
 - name: Install pm2
