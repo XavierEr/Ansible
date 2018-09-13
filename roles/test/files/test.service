@@ -1,0 +1,20 @@
+[Unit]
+Description=Test Service
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+Environment=PATH=/usr/bin:/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+Environment=PM2_HOME=/root/.pm2
+PIDFile=/root/.pm2/pm2.pid
+
+WorkingDirectory=/opt/apps/test
+ExecStart=/usr/bin/pm2 start /etc/pm2/conf.d/process.json --env production
+ExecReload=/usr/bin/pm2 reload /etc/pm2/conf.d/process.json --env production
+ExecStop=/usr/bin/pm2 delete /etc/pm2/conf.d/process.json
+
+[Install]
+WantedBy=multi-user.target
